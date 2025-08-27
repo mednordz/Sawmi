@@ -1,0 +1,465 @@
+// !$*UTF8*$!
+{
+archiveVersion = 1;
+classes = {};
+objectVersion = 55;
+objects = {
+
+/* Begin PBXBuildFile section */
+D7E0FFD0266CC4B5000A00A1 /* SawmiApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7E0FFB0266CC4B5000A00A1 /* SawmiApp.swift */; };
+D7E0FFD1266CC4B5000A00A1 /* FastDebt.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7E0FFB1266CC4B5000A00A1 /* FastDebt.swift */; };
+D7E0FFD2266CC4B5000A00A1 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7E0FFB2266CC4B5000A00A1 /* Storage.swift */; };
+D7E0FFD3266CC4B5000A00A1 /* FastDebtStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7E0FFB3266CC4B5000A00A1 /* FastDebtStore.swift */; };
+D7E0FFD4266CC4B5000A00A1 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7E0FFB4266CC4B5000A00A1 /* HomeView.swift */; };
+D7E0FFD5266CC4B5000A00A1 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7E0FFB5266CC4B5000A00A1 /* SettingsView.swift */; };
+D7E0FFD6266CC4B5000A00A1 /* ReminderService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7E0FFB6266CC4B5000A00A1 /* ReminderService.swift */; };
+D7E0FFD7266CC4B5000A00A1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D7E0FFB7266CC4B5000A00A1 /* Assets.xcassets */; };
+D7E0FFD8266CC4B5000A00A1 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D7E0FFB9266CC4B5000A00A1 /* Localizable.strings */; };
+D7E0FFD9266CC4B5000A00A1 /* StorageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7E0FFC4266CC4B5000A00A1 /* StorageTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+D7E0FF9A266CC4B4000A00A1 /* Sawmi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sawmi.app; sourceTree = BUILT_PRODUCTS_DIR; };
+D7E0FFB0266CC4B5000A00A1 /* SawmiApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SawmiApp.swift; sourceTree = "<group>"; };
+D7E0FFB1266CC4B5000A00A1 /* FastDebt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FastDebt.swift; sourceTree = "<group>"; };
+D7E0FFB2266CC4B5000A00A1 /* Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
+D7E0FFB3266CC4B5000A00A1 /* FastDebtStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FastDebtStore.swift; sourceTree = "<group>"; };
+D7E0FFB4266CC4B5000A00A1 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+D7E0FFB5266CC4B5000A00A1 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+D7E0FFB6266CC4B5000A00A1 /* ReminderService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderService.swift; sourceTree = "<group>"; };
+D7E0FFB7266CC4B5000A00A1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+D7E0FFB8266CC4B5000A00A1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+D7E0FFBA266CC4B5000A00A1 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
+D7E0FFC4266CC4B5000A00A1 /* StorageTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageTests.swift; sourceTree = "<group>"; };
+D7E0FFC5266CC4B5000A00A1 /* SawmiTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SawmiTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+D7E0FF80266CC4B4000A00A1 = {
+isa = PBXGroup;
+children = (
+D7E0FFAA266CC4B5000A00A1 /* Sawmi */,
+D7E0FFBB266CC4B5000A00A1 /* SawmiTests */,
+D7E0FF93266CC4B4000A00A1 /* Products */,
+);
+sourceTree = "<group>";
+};
+D7E0FF93266CC4B4000A00A1 /* Products */ = {
+isa = PBXGroup;
+children = (
+D7E0FF9A266CC4B4000A00A1 /* Sawmi.app */,
+D7E0FFC5266CC4B5000A00A1 /* SawmiTests.xctest */,
+);
+name = Products;
+sourceTree = "<group>";
+};
+D7E0FFAA266CC4B5000A00A1 /* Sawmi */ = {
+isa = PBXGroup;
+children = (
+D7E0FFB0266CC4B5000A00A1 /* SawmiApp.swift */,
+D7E0FFAB266CC4B5000A00A1 /* Models */,
+D7E0FFAC266CC4B5000A00A1 /* Services */,
+D7E0FFAD266CC4B5000A00A1 /* ViewModels */,
+D7E0FFAE266CC4B5000A00A1 /* Views */,
+D7E0FFB7266CC4B5000A00A1 /* Assets.xcassets */,
+D7E0FFB8266CC4B5000A00A1 /* Info.plist */,
+D7E0FFB9266CC4B5000A00A1 /* Localizable.strings */,
+);
+path = Sawmi;
+sourceTree = "<group>";
+};
+D7E0FFAB266CC4B5000A00A1 /* Models */ = {
+isa = PBXGroup;
+children = (
+D7E0FFB1266CC4B5000A00A1 /* FastDebt.swift */,
+);
+path = Models;
+sourceTree = "<group>";
+};
+D7E0FFAC266CC4B5000A00A1 /* Services */ = {
+isa = PBXGroup;
+children = (
+D7E0FFB2266CC4B5000A00A1 /* Storage.swift */,
+D7E0FFB6266CC4B5000A00A1 /* ReminderService.swift */,
+);
+path = Services;
+sourceTree = "<group>";
+};
+D7E0FFAD266CC4B5000A00A1 /* ViewModels */ = {
+isa = PBXGroup;
+children = (
+D7E0FFB3266CC4B5000A00A1 /* FastDebtStore.swift */,
+);
+path = ViewModels;
+sourceTree = "<group>";
+};
+D7E0FFAE266CC4B5000A00A1 /* Views */ = {
+isa = PBXGroup;
+children = (
+D7E0FFB4266CC4B5000A00A1 /* HomeView.swift */,
+D7E0FFB5266CC4B5000A00A1 /* SettingsView.swift */,
+);
+path = Views;
+sourceTree = "<group>";
+};
+D7E0FFB9266CC4B5000A00A1 /* Localizable.strings */ = {
+isa = PBXVariantGroup;
+children = (
+D7E0FFBA266CC4B5000A00A1 /* fr */,
+);
+name = Localizable.strings;
+sourceTree = "<group>";
+};
+D7E0FFBB266CC4B5000A00A1 /* SawmiTests */ = {
+isa = PBXGroup;
+children = (
+D7E0FFC4266CC4B5000A00A1 /* StorageTests.swift */,
+);
+path = SawmiTests;
+sourceTree = "<group>";
+};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+D7E0FF8A266CC4B4000A00A1 /* Sawmi */ = {
+isa = PBXNativeTarget;
+buildConfigurationList = D7E0FF8E266CC4B4000A00A1 /* Build configuration list for PBXNativeTarget "Sawmi" */;
+buildPhases = (
+D7E0FF8B266CC4B4000A00A1 /* Sources */,
+D7E0FF8C266CC4B4000A00A1 /* Frameworks */,
+D7E0FF8D266CC4B4000A00A1 /* Resources */,
+);
+buildRules = (
+);
+dependencies = (
+);
+name = Sawmi;
+productName = Sawmi;
+productReference = D7E0FF9A266CC4B4000A00A1 /* Sawmi.app */;
+productType = "com.apple.product-type.application";
+};
+D7E0FFC0266CC4B5000A00A1 /* SawmiTests */ = {
+isa = PBXNativeTarget;
+buildConfigurationList = D7E0FFC7266CC4B5000A00A1 /* Build configuration list for PBXNativeTarget "SawmiTests" */;
+buildPhases = (
+D7E0FFC1266CC4B5000A00A1 /* Sources */,
+D7E0FFC2266CC4B5000A00A1 /* Frameworks */,
+D7E0FFC3266CC4B5000A00A1 /* Resources */,
+);
+dependencies = (
+);
+name = SawmiTests;
+productName = SawmiTests;
+productReference = D7E0FFC5266CC4B5000A00A1 /* SawmiTests.xctest */;
+productType = "com.apple.product-type.bundle.unit-test";
+};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+D7E0FF81266CC4B4000A00A1 /* Project object */ = {
+isa = PBXProject;
+attributes = {
+LastSwiftUpdateCheck = 1300;
+LastUpgradeCheck = 1300;
+TargetAttributes = {
+D7E0FF8A266CC4B4000A00A1 = {
+CreatedOnToolsVersion = 13.0;
+};
+D7E0FFC0266CC4B5000A00A1 = {
+CreatedOnToolsVersion = 13.0;
+};
+};
+};
+buildConfigurationList = D7E0FF85266CC4B4000A00A1 /* Build configuration list for PBXProject "Sawmi" */;
+compatibilityVersion = "Xcode 13.0";
+developmentRegion = fr;
+hasScannedForEncodings = 0;
+knownRegions = (
+fr,
+Base,
+);
+mainGroup = D7E0FF80266CC4B4000A00A1;
+productRefGroup = D7E0FF93266CC4B4000A00A1 /* Products */;
+projectDirPath = "";
+projectRoot = "";
+targets = (
+D7E0FF8A266CC4B4000A00A1 /* Sawmi */,
+D7E0FFC0266CC4B5000A00A1 /* SawmiTests */,
+);
+};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+D7E0FF8D266CC4B4000A00A1 /* Resources */ = {
+isa = PBXResourcesBuildPhase;
+buildActionMask = 2147483647;
+files = (
+D7E0FFD7266CC4B5000A00A1 /* Assets.xcassets in Resources */,
+D7E0FFD8266CC4B5000A00A1 /* Localizable.strings in Resources */,
+);
+runOnlyForDeploymentPostprocessing = 0;
+};
+D7E0FFC3266CC4B5000A00A1 /* Resources */ = {
+isa = PBXResourcesBuildPhase;
+buildActionMask = 2147483647;
+files = (
+);
+runOnlyForDeploymentPostprocessing = 0;
+};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+D7E0FF8B266CC4B4000A00A1 /* Sources */ = {
+isa = PBXSourcesBuildPhase;
+buildActionMask = 2147483647;
+files = (
+D7E0FFD0266CC4B5000A00A1 /* SawmiApp.swift in Sources */,
+D7E0FFD1266CC4B5000A00A1 /* FastDebt.swift in Sources */,
+D7E0FFD2266CC4B5000A00A1 /* Storage.swift in Sources */,
+D7E0FFD3266CC4B5000A00A1 /* FastDebtStore.swift in Sources */,
+D7E0FFD4266CC4B5000A00A1 /* HomeView.swift in Sources */,
+D7E0FFD5266CC4B5000A00A1 /* SettingsView.swift in Sources */,
+D7E0FFD6266CC4B5000A00A1 /* ReminderService.swift in Sources */,
+);
+runOnlyForDeploymentPostprocessing = 0;
+};
+D7E0FFC1266CC4B5000A00A1 /* Sources */ = {
+isa = PBXSourcesBuildPhase;
+buildActionMask = 2147483647;
+files = (
+D7E0FFD9266CC4B5000A00A1 /* StorageTests.swift in Sources */,
+);
+runOnlyForDeploymentPostprocessing = 0;
+};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXFrameworksBuildPhase section */
+D7E0FF8C266CC4B4000A00A1 /* Frameworks */ = {
+isa = PBXFrameworksBuildPhase;
+buildActionMask = 2147483647;
+files = (
+);
+runOnlyForDeploymentPostprocessing = 0;
+};
+D7E0FFC2266CC4B5000A00A1 /* Frameworks */ = {
+isa = PBXFrameworksBuildPhase;
+buildActionMask = 2147483647;
+files = (
+);
+runOnlyForDeploymentPostprocessing = 0;
+};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+D7E0FF86266CC4B4000A00A1 /* Debug */ = {
+isa = XCBuildConfiguration;
+buildSettings = {
+ALWAYS_SEARCH_USER_PATHS = NO;
+CLANG_ANALYZER_NONNULL = YES;
+CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+CLANG_ENABLE_MODULES = YES;
+CLANG_ENABLE_OBJC_ARC = YES;
+CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+CLANG_WARN_BOOL_CONVERSION = YES;
+CLANG_WARN_COMMA = YES;
+CLANG_WARN_CONSTANT_CONVERSION = YES;
+CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+CLANG_WARN_EMPTY_BODY = YES;
+CLANG_WARN_ENUM_CONVERSION = YES;
+CLANG_WARN_INFINITE_RECURSION = YES;
+CLANG_WARN_INT_CONVERSION = YES;
+CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+CLANG_WARN_STRICT_PROTOTYPES = YES;
+CLANG_WARN_SUSPICIOUS_MOVE = YES;
+CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+CODE_SIGN_IDENTITY = "";
+COPY_PHASE_STRIP = NO;
+DEBUG_INFORMATION_FORMAT = dwarf;
+ENABLE_STRICT_OBJC_MSGSEND = YES;
+ENABLE_TESTABILITY = YES;
+GCC_C_LANGUAGE_STANDARD = gnu11;
+GCC_DYNAMIC_NO_PIC = NO;
+GCC_NO_COMMON_BLOCKS = YES;
+GCC_PREPROCESSOR_DEFINITIONS = (
+"DEBUG=1",
+"$(inherited)",
+);
+GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+GCC_WARN_UNDECLARED_SELECTOR = YES;
+GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+GCC_WARN_UNUSED_FUNCTION = YES;
+GCC_WARN_UNUSED_VARIABLE = YES;
+IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+ONLY_ACTIVE_ARCH = YES;
+SDKROOT = iphoneos;
+};
+name = Debug;
+};
+D7E0FF87266CC4B4000A00A1 /* Release */ = {
+isa = XCBuildConfiguration;
+buildSettings = {
+ALWAYS_SEARCH_USER_PATHS = NO;
+CLANG_ANALYZER_NONNULL = YES;
+CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+CLANG_ENABLE_MODULES = YES;
+CLANG_ENABLE_OBJC_ARC = YES;
+CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+CLANG_WARN_BOOL_CONVERSION = YES;
+CLANG_WARN_COMMA = YES;
+CLANG_WARN_CONSTANT_CONVERSION = YES;
+CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+CLANG_WARN_EMPTY_BODY = YES;
+CLANG_WARN_ENUM_CONVERSION = YES;
+CLANG_WARN_INFINITE_RECURSION = YES;
+CLANG_WARN_INT_CONVERSION = YES;
+CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+CLANG_WARN_STRICT_PROTOTYPES = YES;
+CLANG_WARN_SUSPICIOUS_MOVE = YES;
+CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+CODE_SIGN_IDENTITY = "";
+COPY_PHASE_STRIP = NO;
+DEBUG_INFORMATION_FORMAT = dwarf;
+ENABLE_NS_ASSERTIONS = NO;
+ENABLE_STRICT_OBJC_MSGSEND = YES;
+GCC_C_LANGUAGE_STANDARD = gnu11;
+GCC_NO_COMMON_BLOCKS = YES;
+GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+GCC_WARN_UNDECLARED_SELECTOR = YES;
+GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+GCC_WARN_UNUSED_FUNCTION = YES;
+GCC_WARN_UNUSED_VARIABLE = YES;
+IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+MTL_ENABLE_DEBUG_INFO = NO;
+SDKROOT = iphoneos;
+VALIDATE_PRODUCT = YES;
+};
+name = Release;
+};
+D7E0FF8F266CC4B4000A00A1 /* Debug */ = {
+isa = XCBuildConfiguration;
+buildSettings = {
+ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+CODE_SIGN_STYLE = Automatic;
+DEVELOPMENT_TEAM = "";
+INFOPLIST_FILE = Sawmi/Info.plist;
+IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+LD_RUNPATH_SEARCH_PATHS = (
+"$(inherited)",
+"@executable_path/Frameworks",
+);
+PRODUCT_BUNDLE_IDENTIFIER = com.mednordz.sawmi;
+PRODUCT_NAME = "$(TARGET_NAME)";
+SWIFT_VERSION = 5.0;
+TARGETED_DEVICE_FAMILY = "1,2";
+};
+name = Debug;
+};
+D7E0FF90266CC4B4000A00A1 /* Release */ = {
+isa = XCBuildConfiguration;
+buildSettings = {
+ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+CODE_SIGN_STYLE = Automatic;
+DEVELOPMENT_TEAM = "";
+INFOPLIST_FILE = Sawmi/Info.plist;
+IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+LD_RUNPATH_SEARCH_PATHS = (
+"$(inherited)",
+"@executable_path/Frameworks",
+);
+PRODUCT_BUNDLE_IDENTIFIER = com.mednordz.sawmi;
+PRODUCT_NAME = "$(TARGET_NAME)";
+SWIFT_VERSION = 5.0;
+TARGETED_DEVICE_FAMILY = "1,2";
+};
+name = Release;
+};
+D7E0FFC8266CC4B5000A00A1 /* Debug */ = {
+isa = XCBuildConfiguration;
+buildSettings = {
+CODE_SIGN_STYLE = Automatic;
+DEVELOPMENT_TEAM = "";
+INFOPLIST_FILE = SawmiTests/Info.plist;
+LD_RUNPATH_SEARCH_PATHS = (
+"$(inherited)",
+"@executable_path/Frameworks",
+"@loader_path/Frameworks",
+);
+PRODUCT_BUNDLE_IDENTIFIER = com.mednordz.sawmiTests;
+PRODUCT_NAME = "$(TARGET_NAME)";
+SWIFT_VERSION = 5.0;
+TARGETED_DEVICE_FAMILY = "1,2";
+};
+name = Debug;
+};
+D7E0FFC9266CC4B5000A00A1 /* Release */ = {
+isa = XCBuildConfiguration;
+buildSettings = {
+CODE_SIGN_STYLE = Automatic;
+DEVELOPMENT_TEAM = "";
+INFOPLIST_FILE = SawmiTests/Info.plist;
+LD_RUNPATH_SEARCH_PATHS = (
+"$(inherited)",
+"@executable_path/Frameworks",
+"@loader_path/Frameworks",
+);
+PRODUCT_BUNDLE_IDENTIFIER = com.mednordz.sawmiTests;
+PRODUCT_NAME = "$(TARGET_NAME)";
+SWIFT_VERSION = 5.0;
+TARGETED_DEVICE_FAMILY = "1,2";
+};
+name = Release;
+};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+D7E0FF85266CC4B4000A00A1 /* Build configuration list for PBXProject "Sawmi" */ = {
+isa = XCConfigurationList;
+buildConfigurations = (
+D7E0FF86266CC4B4000A00A1 /* Debug */,
+D7E0FF87266CC4B4000A00A1 /* Release */,
+);
+defaultConfigurationIsVisible = 0;
+defaultConfigurationName = Release;
+};
+D7E0FF8E266CC4B4000A00A1 /* Build configuration list for PBXNativeTarget "Sawmi" */ = {
+isa = XCConfigurationList;
+buildConfigurations = (
+D7E0FF8F266CC4B4000A00A1 /* Debug */,
+D7E0FF90266CC4B4000A00A1 /* Release */,
+);
+defaultConfigurationIsVisible = 0;
+defaultConfigurationName = Release;
+};
+D7E0FFC7266CC4B5000A00A1 /* Build configuration list for PBXNativeTarget "SawmiTests" */ = {
+isa = XCConfigurationList;
+buildConfigurations = (
+D7E0FFC8266CC4B5000A00A1 /* Debug */,
+D7E0FFC9266CC4B5000A00A1 /* Release */,
+);
+defaultConfigurationIsVisible = 0;
+defaultConfigurationName = Release;
+};
+/* End XCConfigurationList section */
+
+};
+rootObject = D7E0FF81266CC4B4000A00A1 /* Project object */;
+}
