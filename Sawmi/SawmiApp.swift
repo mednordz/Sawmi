@@ -1,5 +1,6 @@
 import SwiftUI
 
+/// Main application entry point
 @main
 struct SawmiApp: App {
     @StateObject private var store = FastDebtStore()
