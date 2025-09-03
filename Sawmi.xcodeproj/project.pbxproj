@@ -13,6 +13,7 @@ D7E0FFD3266CC4B5000A00A1 /* FastDebtStore.swift in Sources */ = {isa = PBXBuildF
 D7E0FFD4266CC4B5000A00A1 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7E0FFB4266CC4B5000A00A1 /* HomeView.swift */; };
 D7E0FFD5266CC4B5000A00A1 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7E0FFB5266CC4B5000A00A1 /* SettingsView.swift */; };
 D7E0FFD6266CC4B5000A00A1 /* ReminderService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7E0FFB6266CC4B5000A00A1 /* ReminderService.swift */; };
+D6415E42C76B4FA1989C521A /* DatabaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4278A17559234C708CE88723 /* DatabaseService.swift */; };
 D7E0FFD7266CC4B5000A00A1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D7E0FFB7266CC4B5000A00A1 /* Assets.xcassets */; };
 D7E0FFD8266CC4B5000A00A1 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D7E0FFB9266CC4B5000A00A1 /* Localizable.strings */; };
 D7E0FFD9266CC4B5000A00A1 /* StorageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7E0FFC4266CC4B5000A00A1 /* StorageTests.swift */; };
@@ -30,6 +31,7 @@ D7E0FFB3266CC4B5000A00A1 /* FastDebtStore.swift */ = {isa = PBXFileReference; la
 D7E0FFB4266CC4B5000A00A1 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 D7E0FFB5266CC4B5000A00A1 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 D7E0FFB6266CC4B5000A00A1 /* ReminderService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderService.swift; sourceTree = "<group>"; };
+4278A17559234C708CE88723 /* DatabaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseService.swift; sourceTree = "<group>"; };
 D7E0FFB7266CC4B5000A00A1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 D7E0FFB8266CC4B5000A00A1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 D7E0FFBA266CC4B5000A00A1 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -89,6 +91,7 @@ children = (
         17E87F1BB90E4B649D8040B7 /* AuthService.swift */,
 D7E0FFB2266CC4B5000A00A1 /* Storage.swift */,
 D7E0FFB6266CC4B5000A00A1 /* ReminderService.swift */,
+4278A17559234C708CE88723 /* DatabaseService.swift */,
 );
 path = Services;
 sourceTree = "<group>";
@@ -232,6 +235,7 @@ D7E0FFD3266CC4B5000A00A1 /* FastDebtStore.swift in Sources */,
 D7E0FFD4266CC4B5000A00A1 /* HomeView.swift in Sources */,
 D7E0FFD5266CC4B5000A00A1 /* SettingsView.swift in Sources */,
 D7E0FFD6266CC4B5000A00A1 /* ReminderService.swift in Sources */,
+D6415E42C76B4FA1989C521A /* DatabaseService.swift in Sources */,
 );
 runOnlyForDeploymentPostprocessing = 0;
 };
