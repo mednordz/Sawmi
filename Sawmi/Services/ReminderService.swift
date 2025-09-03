@@ -5,6 +5,11 @@ class ReminderService {
     static let shared = ReminderService()
     private init() {}
 
+    private enum Identifier: String, CaseIterable {
+        case daily = "dailyReminder"
+        case weekly = "weeklyReminder"
+    }
+
     func requestAuthorization() {
         UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound]) { _, _ in }
     }
@@ -15,7 +20,7 @@ class ReminderService {
         content.title = NSLocalizedString("rappels", comment: "reminders")
         content.body = "Sawmi — Ton jeûne, bien organisé."
         let trigger = UNCalendarNotificationTrigger(dateMatching: components, repeats: true)
-        let request = UNNotificationRequest(identifier: "dailyReminder", content: content, trigger: trigger)
+        let request = UNNotificationRequest(identifier: Identifier.daily.rawValue, content: content, trigger: trigger)
         UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
     }
 
@@ -27,11 +32,12 @@ class ReminderService {
         content.title = NSLocalizedString("rappels", comment: "reminders")
         content.body = "Sawmi — Ton jeûne, bien organisé."
         let trigger = UNCalendarNotificationTrigger(dateMatching: comps, repeats: true)
-        let request = UNNotificationRequest(identifier: "weeklyReminder", content: content, trigger: trigger)
+        let request = UNNotificationRequest(identifier: Identifier.weekly.rawValue, content: content, trigger: trigger)
         UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
     }
 
     func cancel() {
-        UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
+        let ids = Identifier.allCases.map { $0.rawValue }
+        UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: ids)
     }
 }
