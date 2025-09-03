@@ -2,6 +2,7 @@ import SwiftUI
 
 struct HomeView: View {
     @EnvironmentObject var store: FastDebtStore
+    @ObservedObject private var auth = AuthService.shared
     @AppStorage("targetDays") var targetDays: Int = 0
     @State private var showingAdd = false
     @State private var newDate = Date()
@@ -27,11 +28,12 @@ struct HomeView: View {
                 .font(.headline)
                 .padding(.top)
 
-            ProgressView(value: targetDays == 0 ? 0 : Double(store.debts.count) / Double(targetDays))
+            let userDebts = store.debts.filter { $0.userId == auth.currentUser?.id }
+            ProgressView(value: targetDays == 0 ? 0 : Double(userDebts.count) / Double(targetDays))
             Text("Restant: \(store.remaining(target: targetDays)) / Objectif: \(targetDays)")
 
             List {
-                ForEach(store.debts) { debt in
+                ForEach(userDebts) { debt in
                     HStack {
                         VStack(alignment: .leading) {
                             Text("\(gregorian.string(from: debt.date)) (\(hijri.string(from: debt.date)))")
@@ -47,7 +49,10 @@ struct HomeView: View {
                     }
                 }
                 .onDelete { indexSet in
-                    for index in indexSet { store.debts.remove(at: index) }
+                    for index in indexSet {
+                        let debt = userDebts[index]
+                        store.remove(debt)
+                    }
                 }
             }
         }
@@ -71,7 +76,9 @@ struct HomeView: View {
                     DatePicker("Date", selection: $newDate, displayedComponents: .date)
                     TextField("Note", text: $newNote)
                     Button(NSLocalizedString("add", comment: "add")) {
-                        store.add(date: newDate, note: newNote.isEmpty ? nil : newNote)
+                        if let userId = auth.currentUser?.id {
+                            store.add(date: newDate, note: newNote.isEmpty ? nil : newNote, userId: userId)
+                        }
                         newDate = Date()
                         newNote = ""
                         showingAdd = false
