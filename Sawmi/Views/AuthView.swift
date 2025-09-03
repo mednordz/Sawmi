@@ -7,20 +7,20 @@ struct AuthView: View {
 
     var body: some View {
         VStack(spacing: 16) {
-            TextField("Email", text: $email)
+            TextField(NSLocalizedString("email", comment: "email"), text: $email)
                 .textContentType(.emailAddress)
                 .autocapitalization(.none)
                 .padding()
                 .background(Color.gray.opacity(0.2))
                 .cornerRadius(8)
-            SecureField("Password", text: $password)
+            SecureField(NSLocalizedString("password", comment: "password"), text: $password)
                 .padding()
                 .background(Color.gray.opacity(0.2))
                 .cornerRadius(8)
-            Button("Sign In") {
+            Button(NSLocalizedString("sign_in", comment: "sign in")) {
                 _ = auth.signIn(email: email, password: password)
             }
-            Button("Sign Up") {
+            Button(NSLocalizedString("sign_up", comment: "sign up")) {
                 auth.signUp(email: email, password: password)
             }
         }

@@ -9,26 +9,26 @@ struct SettingsView: View {
     var body: some View {
         Form {
             Stepper(value: $targetDays, in: 0...100) {
-                Text("Objectif: \(targetDays)")
+                Text("\(NSLocalizedString("target", comment: "target")): \(targetDays)")
             }
 
             Section(header: Text(NSLocalizedString("rappels", comment: "reminders"))) {
                 Toggle(isOn: $remindersEnabled) {
-                    Text("Activer")
+                    Text(NSLocalizedString("enable", comment: "enable"))
                 }
                 if remindersEnabled {
-                    Picker("Fréquence", selection: $reminderWeekly) {
-                        Text("Quotidien").tag(false)
-                        Text("Hebdomadaire").tag(true)
+                    Picker(NSLocalizedString("frequency", comment: "frequency"), selection: $reminderWeekly) {
+                        Text(NSLocalizedString("daily", comment: "daily")).tag(false)
+                        Text(NSLocalizedString("weekly", comment: "weekly")).tag(true)
                     }
-                    DatePicker("Heure", selection: Binding(
+                    DatePicker(NSLocalizedString("time", comment: "time"), selection: Binding(
                         get: { Date(timeIntervalSince1970: reminderTime) },
                         set: { reminderTime = $0.timeIntervalSince1970; schedule() }
                     ), displayedComponents: .hourAndMinute)
                 }
             }
         }
-        .navigationTitle("Paramètres")
+        .navigationTitle(NSLocalizedString("settings", comment: "settings"))
         .onChange(of: remindersEnabled) { _ in schedule() }
         .onChange(of: reminderWeekly) { _ in schedule() }
     }
@@ -52,6 +52,6 @@ struct SettingsView: View {
 
 struct SettingsView_Previews: PreviewProvider {
     static var previews: some View {
-        NavigationView { SettingsView() }
+        NavigationStack { SettingsView() }
     }
 }

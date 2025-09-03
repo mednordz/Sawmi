@@ -1,4 +1,5 @@
 import SwiftUI
+import UIKit
 
 struct HomeView: View {
     @EnvironmentObject var store: FastDebtStore
@@ -24,34 +25,38 @@ struct HomeView: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: 16) {
-            Text("Sawmi — Ton jeûne, bien organisé.")
+            Text(NSLocalizedString("tagline", comment: "tagline"))
                 .font(.headline)
                 .padding(.top)
 
             let userDebts = store.debts.filter { $0.userId == auth.currentUser?.id }
             ProgressView(value: targetDays == 0 ? 0 : Double(userDebts.count) / Double(targetDays))
-            Text("Restant: \(store.remaining(target: targetDays)) / Objectif: \(targetDays)")
+            Text("\(NSLocalizedString("remaining", comment: "remaining")): \(store.remaining(target: targetDays)) / \(NSLocalizedString("target", comment: "target")): \(targetDays)")
 
-            List {
-                ForEach(userDebts) { debt in
-                    HStack {
-                        VStack(alignment: .leading) {
-                            Text("\(gregorian.string(from: debt.date)) (\(hijri.string(from: debt.date)))")
-                            if let note = debt.note, !note.isEmpty {
-                                Text(note).font(.subheadline)
+            if userDebts.isEmpty {
+                EmptyStateView()
+            } else {
+                List {
+                    ForEach(userDebts) { debt in
+                        HStack {
+                            VStack(alignment: .leading) {
+                                Text("\(gregorian.string(from: debt.date)) (\(hijri.string(from: debt.date)))")
+                                if let note = debt.note, !note.isEmpty {
+                                    Text(note).font(.subheadline)
+                                }
                             }
+                            Spacer()
+                            Button(action: { removeDebt(debt) }) {
+                                Image(systemName: "checkmark.circle")
+                            }
+                            .buttonStyle(.borderless)
                         }
-                        Spacer()
-                        Button(action: { store.remove(debt) }) {
-                            Image(systemName: "checkmark.circle")
-                        }
-                        .buttonStyle(.borderless)
                     }
-                }
-                .onDelete { indexSet in
-                    for index in indexSet {
-                        let debt = userDebts[index]
-                        store.remove(debt)
+                    .onDelete { indexSet in
+                        for index in indexSet {
+                            let debt = userDebts[index]
+                            removeDebt(debt)
+                        }
                     }
                 }
             }
@@ -64,17 +69,12 @@ struct HomeView: View {
                 }
                 .accessibilityLabel(NSLocalizedString("add", comment: "add"))
             }
-            ToolbarItem(placement: .navigationBarLeading) {
-                NavigationLink(destination: SettingsView()) {
-                    Image(systemName: "bell")
-                }
-            }
         }
         .sheet(isPresented: $showingAdd) {
-            NavigationView {
+            NavigationStack {
                 Form {
-                    DatePicker("Date", selection: $newDate, displayedComponents: .date)
-                    TextField("Note", text: $newNote)
+                    DatePicker(NSLocalizedString("date", comment: "date"), selection: $newDate, displayedComponents: .date)
+                    TextField(NSLocalizedString("note", comment: "note"), text: $newNote)
                     Button(NSLocalizedString("add", comment: "add")) {
                         if let userId = auth.currentUser?.id {
                             store.add(date: newDate, note: newNote.isEmpty ? nil : newNote, userId: userId)
@@ -87,11 +87,17 @@ struct HomeView: View {
                 .navigationTitle(NSLocalizedString("add", comment: "add"))
                 .toolbar {
                     ToolbarItem(placement: .cancellationAction) {
-                        Button("Fermer") { showingAdd = false }
+                        Button(NSLocalizedString("close", comment: "close")) { showingAdd = false }
                     }
                 }
             }
         }
+    }
+
+    private func removeDebt(_ debt: FastDebt) {
+        store.remove(debt)
+        let generator = UINotificationFeedbackGenerator()
+        generator.notificationOccurred(.success)
     }
 }
 
