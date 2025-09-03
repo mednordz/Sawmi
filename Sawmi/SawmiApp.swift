@@ -8,12 +8,25 @@ struct SawmiApp: App {
 
     var body: some Scene {
         WindowGroup {
-            NavigationView {
+            Group {
                 if auth.currentUser == nil {
                     AuthView()
                 } else {
-                    HomeView()
-                        .environmentObject(store)
+                    TabView {
+                        NavigationStack { HomeView() }
+                            .tabItem {
+                                Label(NSLocalizedString("home", comment: "home"), systemImage: "house")
+                            }
+                        NavigationStack { SettingsView() }
+                            .tabItem {
+                                Label(NSLocalizedString("settings", comment: "settings"), systemImage: "gear")
+                            }
+                        NavigationStack { ProfileView() }
+                            .tabItem {
+                                Label(NSLocalizedString("profile", comment: "profile"), systemImage: "person")
+                            }
+                    }
+                    .environmentObject(store)
                 }
             }
             .accentColor(Color("AccentColor"))
