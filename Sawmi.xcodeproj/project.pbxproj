@@ -16,6 +16,9 @@ D7E0FFD6266CC4B5000A00A1 /* ReminderService.swift in Sources */ = {isa = PBXBuil
 D7E0FFD7266CC4B5000A00A1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D7E0FFB7266CC4B5000A00A1 /* Assets.xcassets */; };
 D7E0FFD8266CC4B5000A00A1 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D7E0FFB9266CC4B5000A00A1 /* Localizable.strings */; };
 D7E0FFD9266CC4B5000A00A1 /* StorageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7E0FFC4266CC4B5000A00A1 /* StorageTests.swift */; };
+FE8A8E98B75A4F20BD6E24BB /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19D0F2B0AF084C0EB731448A /* User.swift */; };
+EACF9FC00BAA4B0E95184264 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17E87F1BB90E4B649D8040B7 /* AuthService.swift */; };
+0ABDD8F30FA74E8A8E8E1298 /* AuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 465A7D45196844E990C252AA /* AuthView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +35,9 @@ D7E0FFB8266CC4B5000A00A1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFi
 D7E0FFBA266CC4B5000A00A1 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
 D7E0FFC4266CC4B5000A00A1 /* StorageTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageTests.swift; sourceTree = "<group>"; };
 D7E0FFC5266CC4B5000A00A1 /* SawmiTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SawmiTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+19D0F2B0AF084C0EB731448A /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+17E87F1BB90E4B649D8040B7 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
+465A7D45196844E990C252AA /* AuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
@@ -71,6 +77,7 @@ sourceTree = "<group>";
 D7E0FFAB266CC4B5000A00A1 /* Models */ = {
 isa = PBXGroup;
 children = (
+        19D0F2B0AF084C0EB731448A /* User.swift */,
 D7E0FFB1266CC4B5000A00A1 /* FastDebt.swift */,
 );
 path = Models;
@@ -79,6 +86,7 @@ sourceTree = "<group>";
 D7E0FFAC266CC4B5000A00A1 /* Services */ = {
 isa = PBXGroup;
 children = (
+        17E87F1BB90E4B649D8040B7 /* AuthService.swift */,
 D7E0FFB2266CC4B5000A00A1 /* Storage.swift */,
 D7E0FFB6266CC4B5000A00A1 /* ReminderService.swift */,
 );
@@ -96,6 +104,7 @@ sourceTree = "<group>";
 D7E0FFAE266CC4B5000A00A1 /* Views */ = {
 isa = PBXGroup;
 children = (
+        465A7D45196844E990C252AA /* AuthView.swift */,
 D7E0FFB4266CC4B5000A00A1 /* HomeView.swift */,
 D7E0FFB5266CC4B5000A00A1 /* SettingsView.swift */,
 );
@@ -213,6 +222,9 @@ D7E0FF8B266CC4B4000A00A1 /* Sources */ = {
 isa = PBXSourcesBuildPhase;
 buildActionMask = 2147483647;
 files = (
+        FE8A8E98B75A4F20BD6E24BB /* User.swift in Sources */,
+        EACF9FC00BAA4B0E95184264 /* AuthService.swift in Sources */,
+        0ABDD8F30FA74E8A8E8E1298 /* AuthView.swift in Sources */,
 D7E0FFD0266CC4B5000A00A1 /* SawmiApp.swift in Sources */,
 D7E0FFD1266CC4B5000A00A1 /* FastDebt.swift in Sources */,
 D7E0FFD2266CC4B5000A00A1 /* Storage.swift in Sources */,
