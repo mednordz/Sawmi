@@ -5,26 +5,36 @@ class DatabaseService {
     private let fileManager = FileManager.default
     private init() {}
 
-    func loadDebts(for userId: UUID) -> [FastDebt] {
+    func loadDebts(for userId: UUID) throws -> [FastDebt] {
         let url = fileURL(for: userId)
-        if let data = try? Data(contentsOf: url) {
+        do {
+            let data = try Data(contentsOf: url)
             let decoder = JSONDecoder()
-            if let debts = try? decoder.decode([FastDebt].self, from: data) {
-                return debts
+            return try decoder.decode([FastDebt].self, from: data)
+        } catch {
+            print("Failed to load debts: \(error)")
+            do {
+                if let migrated = try migrateFromUserDefaults(for: userId) {
+                    return migrated
+                }
+            } catch {
+                print("Migration failed: \(error)")
+                throw error
             }
+            throw error
         }
-        if let migrated = migrateFromUserDefaults(for: userId) {
-            return migrated
-        }
-        return []
     }
 
-    func saveDebts(_ debts: [FastDebt], for userId: UUID) {
+    func saveDebts(_ debts: [FastDebt], for userId: UUID) throws {
         let url = fileURL(for: userId)
         let encoder = JSONEncoder()
-        if let data = try? encoder.encode(debts) {
-            try? fileManager.createDirectory(at: url.deletingLastPathComponent(), withIntermediateDirectories: true)
-            try? data.write(to: url, options: .atomic)
+        do {
+            let data = try encoder.encode(debts)
+            try fileManager.createDirectory(at: url.deletingLastPathComponent(), withIntermediateDirectories: true)
+            try data.write(to: url, options: .atomic)
+        } catch {
+            print("Failed to save debts: \(error)")
+            throw error
         }
     }
 
@@ -33,7 +43,7 @@ class DatabaseService {
         return dir.appendingPathComponent("debts_\(userId.uuidString).json")
     }
 
-    private func migrateFromUserDefaults(for userId: UUID) -> [FastDebt]? {
+    private func migrateFromUserDefaults(for userId: UUID) throws -> [FastDebt]? {
         let storage = Storage()
         var debts = storage.load()
         guard !debts.isEmpty else { return nil }
@@ -42,8 +52,13 @@ class DatabaseService {
             d.userId = userId
             return d
         }
-        saveDebts(debts, for: userId)
-        storage.clear()
-        return debts
+        do {
+            try saveDebts(debts, for: userId)
+            storage.clear()
+            return debts
+        } catch {
+            print("Failed to migrate debts: \(error)")
+            throw error
+        }
     }
 }

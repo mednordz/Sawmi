@@ -12,13 +12,23 @@ class FastDebtStore: ObservableObject {
 
     init() {
         if let id = auth.currentUser?.id {
-            debts = database.loadDebts(for: id)
+            do {
+                debts = try database.loadDebts(for: id)
+            } catch {
+                print("Failed to load debts: \(error)")
+                debts = []
+            }
         }
         auth.$currentUser
             .sink { [weak self] user in
                 guard let self = self else { return }
                 if let id = user?.id {
-                    self.debts = self.database.loadDebts(for: id)
+                    do {
+                        self.debts = try self.database.loadDebts(for: id)
+                    } catch {
+                        print("Failed to load debts: \(error)")
+                        self.debts = []
+                    }
                 } else {
                     self.debts = []
                 }
@@ -45,6 +55,10 @@ class FastDebtStore: ObservableObject {
     private func save() {
         guard let id = auth.currentUser?.id else { return }
         let userDebts = debts.filter { $0.userId == id }
-        database.saveDebts(userDebts, for: id)
+        do {
+            try database.saveDebts(userDebts, for: id)
+        } catch {
+            print("Failed to save debts: \(error)")
+        }
     }
 }
