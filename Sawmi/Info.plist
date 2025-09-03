@@ -4,6 +4,10 @@
 <dict>
     <key>CFBundleName</key>
     <string>Sawmi</string>
+    <key>CFBundleExecutable</key>
+    <string>$(EXECUTABLE_NAME)</string>
+    <key>CFBundlePackageType</key>
+    <string>APPL</string>
     <key>CFBundleIdentifier</key>
     <string>com.mednordz.sawmi</string>
     <key>CFBundleVersion</key>
