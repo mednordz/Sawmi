@@ -26,21 +26,25 @@ class FastDebtStore: ObservableObject {
             .store(in: &cancellables)
     }
 
-    func add(date: Date, note: String?) {
-        let debt = FastDebt(id: UUID(), date: date, note: note)
+    func add(date: Date, note: String?, userId: UUID) {
+        let debt = FastDebt(id: UUID(), userId: userId, date: date, note: note)
         debts.append(debt)
     }
 
     func remove(_ debt: FastDebt) {
-        debts.removeAll { $0.id == debt.id }
+        guard auth.currentUser?.id == debt.userId else { return }
+        debts.removeAll { $0.id == debt.id && $0.userId == debt.userId }
     }
 
     func remaining(target: Int) -> Int {
-        max(target - debts.count, 0)
+        guard let id = auth.currentUser?.id else { return target }
+        let count = debts.filter { $0.userId == id }.count
+        return max(target - count, 0)
     }
 
     private func save() {
         guard let id = auth.currentUser?.id else { return }
-        database.saveDebts(debts, for: id)
+        let userDebts = debts.filter { $0.userId == id }
+        database.saveDebts(userDebts, for: id)
     }
 }

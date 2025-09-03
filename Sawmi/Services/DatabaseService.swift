@@ -35,8 +35,13 @@ class DatabaseService {
 
     private func migrateFromUserDefaults(for userId: UUID) -> [FastDebt]? {
         let storage = Storage()
-        let debts = storage.load()
+        var debts = storage.load()
         guard !debts.isEmpty else { return nil }
+        debts = debts.map { debt in
+            var d = debt
+            d.userId = userId
+            return d
+        }
         saveDebts(debts, for: userId)
         storage.clear()
         return debts
