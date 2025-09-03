@@ -5,6 +5,7 @@ struct SettingsView: View {
     @AppStorage("remindersEnabled") private var remindersEnabled: Bool = false
     @AppStorage("reminderWeekly") private var reminderWeekly: Bool = false
     @AppStorage("reminderTime") private var reminderTime: Double = Date().timeIntervalSince1970
+    @AppStorage("reminderWeekday") private var reminderWeekday: Int = Calendar.current.component(.weekday, from: Date())
 
     var body: some View {
         Form {
@@ -21,6 +22,13 @@ struct SettingsView: View {
                         Text(NSLocalizedString("daily", comment: "daily")).tag(false)
                         Text(NSLocalizedString("weekly", comment: "weekly")).tag(true)
                     }
+                    if reminderWeekly {
+                        Picker(NSLocalizedString("weekday", comment: "weekday"), selection: $reminderWeekday) {
+                            ForEach(1..<8) { index in
+                                Text(Calendar.current.weekdaySymbols[index - 1]).tag(index)
+                            }
+                        }
+                    }
                     DatePicker(NSLocalizedString("time", comment: "time"), selection: Binding(
                         get: { Date(timeIntervalSince1970: reminderTime) },
                         set: { reminderTime = $0.timeIntervalSince1970; schedule() }
@@ -31,6 +39,7 @@ struct SettingsView: View {
         .navigationTitle(NSLocalizedString("settings", comment: "settings"))
         .onChange(of: remindersEnabled) { _ in schedule() }
         .onChange(of: reminderWeekly) { _ in schedule() }
+        .onChange(of: reminderWeekday) { _ in schedule() }
     }
 
     private func schedule() {
@@ -39,8 +48,7 @@ struct SettingsView: View {
         if remindersEnabled {
             ReminderService.shared.requestAuthorization()
             if reminderWeekly {
-                let weekday = Calendar.current.component(.weekday, from: Date())
-                ReminderService.shared.scheduleWeekly(weekday: weekday, time: comps)
+                ReminderService.shared.scheduleWeekly(weekday: reminderWeekday, time: comps)
             } else {
                 ReminderService.shared.scheduleDaily(at: comps)
             }
